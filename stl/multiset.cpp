@@ -12,7 +12,6 @@ struct SCompareEntry{
 		if (this != &other){
 			m_key = other.m_key;
 			sign = other.sign;
-			std::cout << "**" << sign << std::endl;
 		}
 	}
 
@@ -37,11 +36,15 @@ int main(int argc, char* argv[])
 	SCompareEntry obj4(10);
 	obj4.sign = 2;
 
+	SCompareEntry obj5(10);
+	obj5.sign = 3;
+
 	std::multiset<SCompareEntry> obj_multiset;
 	obj_multiset.insert(obj1);
 	obj_multiset.insert(obj2);
 	obj_multiset.insert(obj3);
-	std::multiset<SCompareEntry>::iterator ret = obj_multiset.insert(obj3);
+	obj_multiset.insert(obj4);
+	obj_multiset.insert(obj5);
 
 
 	for (auto itr: obj_multiset){
