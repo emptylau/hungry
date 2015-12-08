@@ -83,17 +83,35 @@ class CEventImplSafe{
 
 // 事件管理器
 template <typename Signature, typename Implementation=CEventImpl<Signature>>
-class CEvent {
+class CEvent: public IEvent<Signature> {
 public:
-    CEvent();
-    ~CEvent();
+    CEvent():impl(new Implementation){
 
-    void Connect(Signature obj){
-        _Connect(obj);
     }
 
-    void DisConnect(Signature obj){
-        _DisConnect(obj);
+    ~CEvent(){
+
+    }
+
+    CEventListener Connect(Signature obj){
+        unsigned int key = _Connect(obj);
+        if (EVENT_KEY_INVALID == key){
+            return CEventListener(EVENT_KEY_INVALID, std::weak_ptr<IEvent>());
+        }
+
+        return CEventListener(key, shared_from_this());
+    }
+
+    bool DisConnect(Signature obj){
+       return _DisConnect(obj);
+    }
+
+    bool DisConnect(unsigned int key){
+        return _DisConnect(key);
+    }
+
+    void DisConnectAll(){
+        impl->DisConnectAll();
     }
 
     void operator+=(Signature obj){
@@ -105,45 +123,48 @@ public:
     }
 
     void operator()(){
-        impl();
+        (*impl)();
     }
 
     template <typename p1> 
     void operator()(p1 arg1){
-        (impl)(arg1);
+        (*impl)(arg1);
     }
 
     template <typename p1, typename p2>
         void operator()(p1 arg1, p2 arg2){
-            (impl)(arg1, arg2);
+            (*impl)(arg1, arg2);
         }
 
     template <typename p1, typename p2, typename p3>
         void operator()(p1 arg1, p2 arg2, p3 arg3){
-            (impl)(arg1, arg2, arg3);
+            (*impl)(arg1, arg2, arg3);
         }
 
     template <typename p1, typename p2, typename p3, typename p4>
         void operator()(p1 arg1, p2 arg2, p3 arg3, p4 arg4){
-            (impl)(arg1, arg2, arg3, arg4);
+            (*impl)(arg1, arg2, arg3, arg4);
         }
 
     template <typename p1, typename p2, typename p3, typename p4, typename p5>
         void operator()(p1 arg1, p2 arg2, p3 arg3, p4 arg4, p5 arg5){
-            (impl)(arg1, arg2, arg3, arg4, arg5);
+            (*impl)(arg1, arg2, arg3, arg4, arg5);
         }
 
 private:
-    void _Connect(Signature obj){
-        impl.Connect(obj);
+    unsigned int _Connect(const Signature& obj){
+        return impl->Connect(obj);
     }
 
-    void _DisConnect(Signature obj){
-        impl.DisConnect(obj);
+    bool _DisConnect(const Signature& obj){
+       return impl->DisConnect(obj);
     }
 
+    bool _DisConnect(unsigned int key){
+        return impl->DisConnect(key);
+    }
 private:
-    Implementation impl;
+    std::shared_ptr<Implementation> impl;
 };
 
 #endif // !_EVENTMANAGER_H_

@@ -5,23 +5,27 @@
 #include <functional>
 
 typedef unsigned int EventKey;
-const EventKey EVENT_KEY_INVALID=0xFFFFFFFF;
+const EventKey EVENT_KEY_INVALID=0x0;
+const EventKey EVENT_MAX_KEY = 0xFFFFFFFF;
 
 template <typename Signature> class CEventList;
 
-template <typename Signature>
 class CEventListener {
 public:
-    CEventListener();
+    CEventListener(EventKey key, IEvent event)
+        :m_key(key), m_pEvent(event) {
 
-    bool Connect();
-    bool DisConnect();
-    bool ReConnect();
+    }
+
+    bool DisConnect(){
+        if (!m_pEvent && EVENT_KEY_INVALID != key) 
+            return m_pEvent.DisConnect(key);
+        return false;
+    }
 
 private:
     EventKey m_key;
-
-    std::weak_ptr<CEventList<Signature>> m_pHandler;
+    std::weak_ptr<IEvent> m_pEvent;
 };
 
 //事件
@@ -43,9 +47,7 @@ class CEventList {
 public:
     CEventList()
         :m_key_next(0)
-         ,m_nCount(0)
-        
-    {
+         ,m_nCount(0) {
 
     }
 
@@ -104,13 +106,20 @@ public:
        return m_nCount; 
     }
 
+    CEventBase<Signature>* getHead(){
+        return m_pListHead;
+    }
+
 private:
     EventKey getNextKey(){
+        if (EVENT_MAX_KEY == m_key_next){
+            m_key_next = 0;
+        }
+
         return ++m_key_next;
     }
 
     CEventBase<Signature>* find(EventKey key){
-
         auto iter = m_pListHead;
         while (NULL != iter){
             if (key == iter->key){
@@ -123,7 +132,6 @@ private:
     }
 
     CEventBase<Signature>* find(Signature obj){
-        
         auto iter = m_pListHead;
         while (NULL != iter){
             if (obj == iter->obj){
@@ -163,15 +171,19 @@ private:
         return true;
     }
 
-    CEventBase<Signature>* getHead(){
-        return m_pListHead;
-    }
 
 private:
     CEventBase<Signature>* m_pListHead;
 
     EventKey m_key_next;
     unsigned int m_nCount;
+};
+
+class IEvent: public enable_shared_from_this<IEvent>{
+public:
+   virtual CEventListener Connect(const Signature& ) = 0;
+   virtual void DisConnect(EventKey key) = 0; 
+
 };
 
 #endif //!_EVENT_H_
