@@ -2,8 +2,6 @@
 #include <vector>
 #include <iostream>
 
-
-
 bool func(int value, int target)
 {
 	if (target == value ){
@@ -62,14 +60,12 @@ int main(int argc, char* argv[])
 
 #else
 
-
 	if( vData.end() != find_if(vData.begin(), vData.end(), Comparer<int>(target)) ){
 		std::cout << "find success" << std::endl;
 	}
 	else {
 		std::cout << "not found!" << std::endl;
 	}
-
 		
 #endif
 
