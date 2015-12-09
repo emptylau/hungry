@@ -18,8 +18,8 @@ public:
 		std::function<Signature> object;
 
 		MapItem(unsigned int key_, std::function<Signature> object_) { 
-            key=key_; 
-            object=object_; 
+            key = key_; 
+            object = object_; 
             next = NULL;
         }
 	};
@@ -31,7 +31,6 @@ public:
 	}
 
 	~CEventItemMap(){
-
 		clear();
 	}
 
@@ -40,7 +39,6 @@ public:
 	}
 
 	std::function<Signature>* find(unsigned int key){
-
 		MapItem* item = m_pHead;
 		while(item){
 			if(item->key == key){
@@ -240,11 +238,11 @@ public:
 	// 运行事件;
 	void operator()(void) { 
 
-		std::map<unsigned int, std::function<Signature> > callback_map = _GetCallbackMap();
+		std::map<unsigned int, std::function<Signature> > function_map = _GetFunctionMap();
 
 		// 遍历运行事件;
-		auto iter = callback_map.begin();
-		while(iter != callback_map.end()) {
+		auto iter = function_map.begin();
+		while(iter != function_map.end()) {
 
 			std::function<Signature> callback = iter->second;
 			if(callback) {
@@ -257,11 +255,11 @@ public:
 	template<class T1>
 	void operator()(T1 t1) { 
 
-		std::map<unsigned int, std::function<Signature> > callback_map = _GetCallbackMap();
+		std::map<unsigned int, std::function<Signature> > function_map = _GetFunctionMap();
 
 		// 遍历运行事件;
-		auto iter = callback_map.begin();
-		while(iter != callback_map.end()) {
+		auto iter = function_map.begin();
+		while(iter != function_map.end()) {
 
 			std::function<Signature> callback = iter->second;
 			if(callback) {
@@ -274,11 +272,11 @@ public:
 	template<class T1, class T2>
 	void operator()(T1 t1, T2 t2) { 
 
-		std::map<unsigned int, std::function<Signature> > callback_map = _GetCallbackMap();
+		std::map<unsigned int, std::function<Signature> > function_map = _GetFunctionMap();
 
 		// 遍历运行事件;
-		auto iter = callback_map.begin();
-		while(iter != callback_map.end()) {
+		auto iter = function_map.begin();
+		while(iter != function_map.end()) {
 
 			std::function<Signature> callback = iter->second;
 			if(callback) {
@@ -291,11 +289,11 @@ public:
 	template<class T1, class T2, class T3>
 	void operator()(T1 t1, T2 t2, T3 t3) { 
 
-		std::map<unsigned int, std::function<Signature> > callback_map = _GetCallbackMap();
+		std::map<unsigned int, std::function<Signature> > function_map = _GetFunctionMap();
 
 		// 遍历运行事件;
-		auto iter = callback_map.begin();
-		while(iter != callback_map.end()) {
+		auto iter = function_map.begin();
+		while(iter != function_map.end()) {
 
 			std::function<Signature> callback = iter->second;
 			if(callback) {
@@ -308,11 +306,11 @@ public:
 	template<class T1, class T2, class T3, class T4>
 	void operator()(T1 t1, T2 t2, T3 t3, T4 t4) { 
 
-		std::map<unsigned int, std::function<Signature> > callback_map = _GetCallbackMap();
+		std::map<unsigned int, std::function<Signature> > function_map = _GetFunctionMap();
 
 		// 遍历运行事件;
-		auto iter = callback_map.begin();
-		while(iter != callback_map.end()) {
+		auto iter = function_map.begin();
+		while(iter != function_map.end()) {
 
 			std::function<Signature> callback = iter->second;
 			if(callback) {
@@ -325,11 +323,11 @@ public:
 	template<class T1, class T2, class T3, class T4, class T5>
 	void operator()(T1 t1, T2 t2, T3 t3, T4 t4, T5 t5) { 
 
-		std::map<unsigned int, std::function<Signature> > callback_map = _GetCallbackMap();
+		std::map<unsigned int, std::function<Signature> > function_map = _GetFunctionMap();
 
 		// 遍历运行事件;
-		auto iter = callback_map.begin();
-		while(iter != callback_map.end()) {
+		auto iter = function_map.begin();
+		while(iter != function_map.end()) {
 
 			std::function<Signature> callback = iter->second;
 			if(callback) {
@@ -342,11 +340,11 @@ public:
 	template<class T1, class T2, class T3, class T4, class T5, class T6>
 	void operator()(T1 t1, T2 t2, T3 t3, T4 t4, T5 t5, T6 t6) { 
 
-		std::map<unsigned int, std::function<Signature> > callback_map = _GetCallbackMap();
+		std::map<unsigned int, std::function<Signature> > function_map = _GetFunctionMap();
 
 		// 遍历运行事件;
-		auto iter = callback_map.begin();
-		while(iter != callback_map.end()) {
+		auto iter = function_map.begin();
+		while(iter != function_map.end()) {
 
 			std::function<Signature> callback = iter->second;
 			if(callback) {
@@ -359,11 +357,11 @@ public:
 	template<class T1, class T2, class T3, class T4, class T5, class T6, class T7>
 	void operator()(T1 t1, T2 t2, T3 t3, T4 t4, T5 t5, T6 t6, T7 t7) { 
 
-		std::map<unsigned int, std::function<Signature> > callback_map = _GetCallbackMap();
+		std::map<unsigned int, std::function<Signature> > function_map = _GetFunctionMap();
 
 		// 遍历运行事件;
-		auto iter = callback_map.begin();
-		while(iter != callback_map.end()) {
+		auto iter = function_map.begin();
+		while(iter != function_map.end()) {
 
 			std::function<Signature> callback = iter->second;
 			if(callback) {
@@ -376,11 +374,11 @@ public:
 	template<class T1, class T2, class T3, class T4, class T5, class T6, class T7, class T8>
 	void operator()(T1 t1, T2 t2, T3 t3, T4 t4, T5 t5, T6 t6, T7 t7, T8 t8) { 
 
-		std::map<unsigned int, std::function<Signature> > callback_map = _GetCallbackMap();
+		std::map<unsigned int, std::function<Signature> > function_map = _GetFunctionMap();
 
 		// 遍历运行事件;
-		auto iter = callback_map.begin();
-		while(iter != callback_map.end()) {
+		auto iter = function_map.begin();
+		while(iter != function_map.end()) {
 
 			std::function<Signature> callback = iter->second;
 			if(callback) {
@@ -393,11 +391,11 @@ public:
 	template<class T1, class T2, class T3, class T4, class T5, class T6, class T7, class T8, class T9>
 	void operator()(T1 t1, T2 t2, T3 t3, T4 t4, T5 t5, T6 t6, T7 t7, T8 t8, T9 t9) { 
 
-		std::map<unsigned int, std::function<Signature> > callback_map = _GetCallbackMap();
+		std::map<unsigned int, std::function<Signature> > function_map = _GetFunctionMap();
 
 		// 遍历运行事件;
-		auto iter = callback_map.begin();
-		while(iter != callback_map.end()) {
+		auto iter = function_map.begin();
+		while(iter != function_map.end()) {
 
 			std::function<Signature> callback = iter->second;
 			if(callback) {
@@ -410,10 +408,10 @@ public:
 	template<class T1, class T2, class T3, class T4, class T5, class T6, class T7, class T8, class T9, class T10>
 	void operator()(T1 t1, T2 t2, T3 t3, T4 t4, T5 t5, T6 t6, T7 t7, T8 t8, T9 t9, T10 t10) { 
 
-		std::map<unsigned int, std::function<Signature> > callback_map = _GetCallbackMap();
+		std::map<unsigned int, std::function<Signature> > function_map = _GetFunctionMap();
 
-		auto iter = callback_map.begin();
-		while(iter != callback_map.end()) {
+		auto iter = function_map.begin();
+		while(iter != function_map.end()) {
 
 			std::function<Signature> callback = iter->second;
 			if(callback) {
@@ -455,7 +453,7 @@ protected:
 		m_functor_map.clear();
 	}
 
-	std::map<unsigned int, std::function<Signature> > _GetCallbackMap(void) {
+	std::map<unsigned int, std::function<Signature> > _GetFunctionMap(void) {
 
 		std::unique_lock<Mutex> lock(m_mutex);
 
