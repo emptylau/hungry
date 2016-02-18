@@ -1,0 +1,28 @@
+#include <iostream>
+
+int main(int argc, char* argv[])
+{
+	int n = 0;
+
+//	goto nor;
+
+	{
+		int n;
+		int m = 1;
+		n = 10;
+inc:
+	++n;
+
+	}
+
+nor:
+	if (n < 10)
+		goto inc;
+	else
+		goto done;
+done:
+	std::cout << "n = " << n << std::endl;
+
+	return 0;
+}
+

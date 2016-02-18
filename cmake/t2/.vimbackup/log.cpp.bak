@@ -1,0 +1,43 @@
+#include <iostream>
+#include <cstdio>
+#include <cstdarg>
+#include "log.h"
+
+namespace T2{
+#define FORMAT_STR(a, b, c) #a" "#b" "#c" = %d\n",a b c 
+#define TEST_M(a, b, c) #a" "#b" "#c" = %d\n", 10
+#define TEST_ADD(a,b) #a" + "#b" = %d\n", (a) + (b)
+};
+
+CLog::CLog(){
+
+}
+
+CLog::~CLog(){
+
+}
+
+void CLog::debug(const char* log_info, ...){
+
+    va_list args;
+    va_start(args, log_info);
+#ifdef DEBUG
+
+    va_arg(args, )
+    while()
+
+#endif
+
+    vprintf(log_info, args);
+
+    va_end(args);
+}
+
+void CLog::error(const char* log_info, ...){
+
+    va_list args;
+    va_start(args, log_info);
+
+    vprintf(log_info, args);
+    va_end(args);
+}

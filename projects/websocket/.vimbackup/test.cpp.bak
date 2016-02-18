@@ -1,0 +1,36 @@
+#include <pthread.h>
+#include <time.h>
+#include <iostream>
+#include <signal.h>
+#include <unistd.h>
+
+bool quit = false;
+
+void sighandler(int sig){
+
+	quit = true;
+}
+
+void* dumb_inc(void* p){
+	int val = *(int*)p;
+	
+	while(!quit){
+		std::cout << p << std::endl;
+		sleep(1);
+	}
+}
+
+int main(int argc, char* argv[]){
+
+	int val = 10;
+
+	signal(SIGINT, sighandler);
+
+	pthread_t tid;
+	pthread_create(&tid, nullptr, dumb_inc, &val);
+	pthread_join(tid, nullptr);
+
+	std::cout << "exit" << std::endl;
+
+	return 0;
+}

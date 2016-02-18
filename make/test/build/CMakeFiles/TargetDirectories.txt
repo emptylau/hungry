@@ -1,0 +1,3 @@
+Z:/linuxc/hungry/make/test/build/CMakeFiles/ALL_BUILD.dir
+Z:/linuxc/hungry/make/test/build/CMakeFiles/ZERO_CHECK.dir
+Z:/linuxc/hungry/make/test/build/CMakeFiles/testhello.dir

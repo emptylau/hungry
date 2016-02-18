@@ -1,0 +1,6 @@
+CMAKE_MINIMUM_REQUIRED(VERSION 2.8 FATAL_ERROR)
+
+SET(src test.cpp log.cpp)
+
+ADD_EXECUTABLE(test ${src})
+

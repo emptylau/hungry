@@ -1,0 +1,32 @@
+#ifndef _QUEUE_H_
+#define _QUEUE_H_
+
+namespace simple_server{
+
+struct queueNode{
+	queueNode* next;
+	void* data;
+};
+
+class queue
+{
+	public:
+		queue();
+		~queue();
+
+	public:
+		bool enqueue(queueNode);
+		queueNode* front();
+		queueNode* pop();
+
+		
+	private:
+		queueNode* head_;
+		unsigned int size_;
+};
+
+
+};
+
+
+#endif

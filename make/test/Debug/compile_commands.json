@@ -1,0 +1,7 @@
+[
+{
+  "directory": "/cygdrive/z/linuxc/hungry/make/test/Debug",
+  "command": "/usr/bin/c++.exe    -g   -o CMakeFiles/testhello.dir/Hello.cpp.o -c /cygdrive/z/linuxc/hungry/make/test/Hello.cpp",
+  "file": "/cygdrive/z/linuxc/hungry/make/test/Hello.cpp"
+}
+]

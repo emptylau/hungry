@@ -1,0 +1,18 @@
+#ifndef _LOG_H_
+#define _LOG_H_
+
+namespace T2{
+
+};
+
+class CLog{
+public:
+    CLog();
+    ~CLog();
+
+public:
+   static void debug(const char* log_info, ...);
+   static void error(const char* log_info, ...);
+};
+
+#endif

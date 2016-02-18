@@ -1,0 +1,14 @@
+
+OBJ=test
+CC=clang++
+FLAGS=
+
+$(OBJ): test.o data_type.hpp
+	$(CC) -o $@ $(FLAGS) $^
+
+%.o: %.cpp
+	$(CC) -c $<
+
+.PHONY: clean
+clean:
+	rm -rf *.o *.gch $(OBJ)

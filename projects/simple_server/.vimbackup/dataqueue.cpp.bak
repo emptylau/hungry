@@ -1,0 +1,77 @@
+#include "dataqueue.h"
+
+
+Queue:Queue():m_pHeadNode(nullptr)
+			 ,m_pTailNode(nullptr)
+			 ,m_nSize(0){
+
+}
+
+Queue::~Queue(){
+
+	QueueData* tmp = nullptr;
+	while (m_pHeadNode){
+		tmp = m_pHeadNode;
+		m_pHeadNode = m_pHeadNode->next;
+
+		delete tmp;
+	}
+}
+
+bool Queue::push(T* data){
+
+	if (data) {
+
+		if (m_pTailNode){
+			m_pTailNode->next = data;
+		}
+
+		m_pTailNode = data;
+
+		if (!m_pHeadNode){
+			m_pHeadNode = data;
+		}
+
+		++m_nSize;
+		
+		return true;
+	}
+
+	return false;
+}
+
+bool Queue::pop(T*& data){
+
+	if (m_pHeadNode){
+
+		data = m_pHeadNode;
+		if (m_pHeadNode == m_pTailNode){
+			m_pTailNode = NULL;
+		}
+		m_pHeadNode = m_pHeadNode-next;
+
+		--m_nSize;
+
+		return true;
+	}
+
+	return false;
+}
+
+QueueData* front(){
+	return m_pHeadNode;
+}
+
+QueueData* back(){
+	return m_pTailNode;
+}
+
+bool Queue::empty(){
+	return 0 == m_nSize;
+}
+
+int Queue::size{
+	return m_nSize;
+}
+
+

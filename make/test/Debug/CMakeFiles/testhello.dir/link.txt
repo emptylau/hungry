@@ -1,0 +1,1 @@
+/usr/bin/c++.exe  -g  -Wl,--enable-auto-import  CMakeFiles/testhello.dir/Hello.cpp.o  -o testhello.exe -Wl,--out-implib,libtesthello.dll.a -Wl,--major-image-version,0,--minor-image-version,0  

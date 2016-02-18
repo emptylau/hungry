@@ -1,0 +1,31 @@
+#ifndef _DATA_TYPE_H_
+#define _DATA_TYPE_H_
+
+class Integer {
+
+public:
+	Integer():m_nData(0){
+	}
+
+	Integer(int value):m_nData(value){
+
+	}
+
+	friend Integer& operator+(Integer&, Integer&);
+	friend Integer& operator-(Integer&, Integer&);
+
+private:
+	int m_nData;
+};
+
+Integer& operator+(Integer& val1, Integer& val2){
+	return val1.m_nData + val2.m_nData;
+}
+
+Integer& operator-(Integer& val1, Integer& val2){
+	return val1.m_nData - val2.m_nData;
+}
+
+#endif //!_DATA_TYPE_H_
+
+
