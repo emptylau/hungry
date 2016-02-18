@@ -9,7 +9,6 @@ int main(int argc, char* argv[])
 	int n = 100;
 
 	int sum = func(n);
-	
 
 	std::cout << sum << std::endl;
 
