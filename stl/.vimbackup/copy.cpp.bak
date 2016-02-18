@@ -2,10 +2,6 @@
 #include <vector>
 #include <algorithm>
 
-// 练习： std::tansform std::copy std::for_each
-// 这几个模板函数在使用时，都必须要注意到:
-// 1. 拷贝的性能，以及遍历的边界问题。
-// 2. 在遍历的过程中，都是以 *elem_iterator的方式来传递参数的。
 template<typename T>
 void print(T elem){
     std::cout << elem << " "; 
@@ -39,16 +35,15 @@ int main(int argc, char* argv[])
     std::for_each(dup.begin(), dup.end(), print<int>);
     std::cout << std::endl;
 
-    int array[] = {1, 2, 3, 4};
     result.resize(dup.size());
 	std::transform(dup.begin(), dup.end(), 
-			array, //data.begin(),
+			data.begin(),
 			result.begin(), 
 			[](int elem1, int elem2){
 				return elem1 * elem2;
 			});
 
-    std::cout << "transform: elem1 * elem2" << std::endl;
+    std::cout << "transform: (elem1, elem2)" << std::endl;
     std::for_each(result.begin(), result.end(), print<int>);
     std::cout << std::endl;
 
