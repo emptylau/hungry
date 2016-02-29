@@ -7,8 +7,8 @@ class String
 public:
 
 	String() = default;
-	String(const char* cstr);
-	String(const String& str);
+	explicit String(const char* cstr);
+	explicit String(const String& str);
 	~String();
 
 	String& operator=(const String& str);

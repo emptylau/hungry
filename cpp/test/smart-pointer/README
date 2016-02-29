@@ -1,0 +1,21 @@
+C++11智能指针练习
+
+1. auto_ptr 
+	auto_ptr的局限性测试
+	auto_ptr_ref
+
+2. unique_ptr 赋值测试
+
+3. shared_ptr 练习
+	make_shared
+	allocate_shared
+	get_deleter
+	enable_shared_from_this // 对象内部获得智能指针的解决方案
+	dynamic_pointer_cast / static_pointer_cast / const_pointer_cast
+	owner_less
+
+4. weak_ptr 练习
+
+5. shared_ptr 定制删除器
+
+6. 智能指针线程安全性考量

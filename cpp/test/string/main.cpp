@@ -12,7 +12,7 @@ int main(int argc, char* argv[])
 
 	delete pStr;
 
-	str = "Hello World!";
+	str = (String)"Hello World!";
 	std::cout << "str = (Hello World!)" << str << std::endl;
 
 	int len = str.size();
