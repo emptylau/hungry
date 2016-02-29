@@ -14,6 +14,10 @@ Number::operator int(){
 	return m_data;
 }
 
+Number::operator int() const{
+	return m_data;
+}
+
 int Number::operator()(){
 	return m_data;
 }

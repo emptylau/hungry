@@ -2,7 +2,7 @@
 类型转换练习:
 
 1. 自动类型转换
-	1)转换函数的定义 operator <type>();
+	1)转换函数的定义 [explicit] operator <type>();
 		转换函数的要求：
 		a. 没有返回值，没有参数
 		b. 必须是类的成员函数，且不能是静态的
@@ -18,4 +18,16 @@
 		int num = 10;
 		double dou = 10.2;
 		num = (int)dou; // 类型收窄,需要显示转换
+
+	reinterpret_cast
+	static_cast
+	dynamic_cast
+	const_cast
+
+	测试：
+		a.基本类型测试
+		b.对象测试: 有继承关系；没有继承关系
+		c.指针测试：有继承关系；没有继承关系
+		d.引用测试：有继承关系；没有继承关系
+		e.常量类型测试：a b c 常量测试
 

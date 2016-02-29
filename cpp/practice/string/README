@@ -1,0 +1,6 @@
+字符串测试：
+
+1. const char* string::c_str() 
+	返回的并不是字面字符串，而是加了const的动态数据(string内部字符串数据)
+
+2. string::data() 和 string::c_str() 调用的结果是相同的 win32下
