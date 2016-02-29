@@ -1,0 +1,9 @@
+string 练习
+
+问题验证:
+1. string obj1 = obj2;
+	执行过程是什么样的？
+
+2. strcpy 会拷贝 \0 吗？
+
+3. std::reverse 区间 [first, last)
