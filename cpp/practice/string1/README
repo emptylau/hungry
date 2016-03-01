@@ -7,3 +7,5 @@ string 练习
 2. strcpy 会拷贝 \0 吗？
 
 3. std::reverse 区间 [first, last)
+
+4. 移动构造和移动赋值

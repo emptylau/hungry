@@ -5,6 +5,10 @@
 char* strcpy(char*, const char*);
 size_t strlen(const char*);
 
+String::String(){
+	std::cout << "String::String()" << std::endl;
+}
+
 String::String(const char* cstr){
 
 	std::cout << "String::String(const char*)" << std::endl;
@@ -16,6 +20,7 @@ String::String(const char* cstr){
 }
 
 String::String(const String& str){
+
 	std::cout << "String::String(const String& str)" << std::endl;
 
 	m_len = str.m_len;
@@ -24,14 +29,29 @@ String::String(const String& str){
 	strcpy(m_pData, str.m_pData);
 }
 
+// 注意移动构造和拷贝构造的区别
+String::String(String&& str){
+	std::cout << "String::String(String&&)" << std::endl;
+
+	m_len = str.m_len;
+	m_pData = str.m_pData;
+	str.m_pData = nullptr;
+}
+
 String::~String(){
-	if (!m_pData)
+	std::cout << "String::~String()" << std::endl;
+	if (m_pData)
 		delete[] m_pData;
 }
 
 // What's mean ?
 String& String::operator=(const String& str){
+
 	std::cout << "String::operator=(const String&)" << std::endl;
+
+	if (this == &str){
+		return *this;
+	}
 
 	if (0 == str.m_len){
 		m_len = 0;	
@@ -49,6 +69,20 @@ String& String::operator=(const String& str){
 
 	return *this;
 
+}
+
+String& String::operator=(String&& str){
+	std::cout << "String::operator=(String&&)" << std::endl;
+
+	if (this == &str)
+		return *this;
+
+	m_len = str.m_len;
+	m_pData = str.m_pData;
+	str.m_pData = nullptr;
+	str.m_pData = 0;
+
+	return *this;
 }
 
 char& String::operator[](int idx){

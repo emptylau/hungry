@@ -1,8 +1,8 @@
 
 TARGET=test
 OBJECTS= main.cpp string.cpp 
-CC=g++
-FLAGS=-std=c++11 -g
+CC=clang++
+FLAGS=-std=c++11 -g -O0
 
 $(TARGET): $(OBJECTS)
 	$(CC) -o $@ $(FLAGS) $^

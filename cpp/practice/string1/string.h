@@ -6,12 +6,14 @@ class String
 {
 public:
 
-	String() = default;
+	String();
+	String(String&& str);
 	explicit String(const char* cstr);
 	explicit String(const String& str);
 	~String();
 
 	String& operator=(const String& str);
+	String& operator=(String&& str);
 	char& operator[](int idx);
 
 	friend std::ostream& operator<<(std::ostream& os, const String& str);

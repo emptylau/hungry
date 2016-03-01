@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <functional>
 
 // 联合的访问限制测试
 // 1. 其实联合和结构体差不多，只是联合采用共享内存的方式来组织数据。
@@ -30,6 +31,8 @@
 };
 
 
+void printUnion(Data data, int flag);
+
 int main(int argc, char* argv[]){
 
 	Data data(10);
@@ -39,8 +42,19 @@ int main(int argc, char* argv[]){
 	std::cout << (float)real << std::endl;
 
 	//real.nValue =10; // 编译错误，访问受限
-	std::cout << (float)real << std::endl;
+	//std::cout << (float)real << std::endl;
+	
+	// 联合做参数
+	printUnion(data, 0);
+	printUnion(real, 1);
 
 	return 0;
 }
 
+void printUnion(Data data, int flag){
+
+	//auto rdata = std::addressof(data);
+	std::cout << __FUNCTION__ << ": "
+		<< ((0 == flag) ? (int)data:(float)data) 
+		<< std::endl;
+}
