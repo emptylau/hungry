@@ -25,23 +25,21 @@ Pig::~Pig(){
 
 Pig& Pig::operator=(const Pig& pig)
 {
-	if (this != &pig) {
-		this->m_data = pig.m_data;
-	}
-
 	std::cout << __FUNCTION__ << "&" << std::endl;
+	if (this != &pig) {
+		m_data = pig.m_data;
+	}
 
 	return *this;
 }
 
 Pig& Pig::operator=(Pig&& pig)
 {
-	if (this != &pig){
-
-		this->m_data = pig.m_data;
-	}
-
 	std::cout << __FUNCTION__ << "&&" << std::endl;
+
+	if (this != &pig){
+		m_data = pig.m_data;
+	}
 
 	return *this;
 }
