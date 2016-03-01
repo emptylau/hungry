@@ -1,0 +1,7 @@
+C++11 随机功能
+
+1. 种子生成器 random_device -非确定性随机数生成器
+2. 随机数生成器 random_engine
+3. 随机数分发器 random_distribution
+
+
