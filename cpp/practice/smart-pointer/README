@@ -15,7 +15,30 @@ C++11智能指针练习
 	owner_less
 
 4. weak_ptr 练习
+	每次使用之前，应该判断指针是否过期expired
+	lock() 获得对象的内存
 
-5. shared_ptr 定制删除器
+5. shared_ptr 
+	删除器 可以解决数组使用问题
+	分配器
+		shared_ptr aliasing构造的 应用
 
 6. 智能指针线程安全性考量
+
+7. shared_ptr 引发的问题
+	1. 循环引用导致内存无法释放
+	2. this 赋值给 shared_ptr 导致内存重复管理
+		解决办法：(前提条件，对象应该是shared_ptr管理的)
+			类继承 enabled_shared_from_this 然后再需要返回shared_ptr时，调用
+		shared_from_this(); 
+	3. 不要在传参的时候创建shared_ptr，因为创建的过程并不是原子操作，当在执行其它参数时
+	如果发生错误，而shared_ptr对象并没有创建完成时，如果new已经完成，则可能发生内存泄漏
+	4.数组的使用可以通过定制删除器来解决
+	5. 不能保证线程安全性问题
+	6. 大量的使用shared_ptr导致内存碎片
+		灵活的使用分配器来解决这个问题
+	7. 父类如何转换为子类
+		dynamic_pointer_cast
+8. 智能指针的类型转换
+	static_pointer_cast / dynamic_pointer_cast / const_pointer_cast
+
