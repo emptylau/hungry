@@ -1,51 +1,7 @@
-#ifndef _LIST_H_
-#define _LIST_H_
-
+#include "list.h"
 #include <iostream>
 
-template <typename T>
-struct ListElement{
-	T data;
-	ListElement<T>* next;
-};
 
-template <typename T>
-class List {
-public:
-	typedef ListElement<T>* Iterator;
-	List();
-	~List();
-
-public:
-	void push_back(const T& obj);
-	void push_back(T&& obj);
-	void push_front(const T& obj);
-	void push_front(T&& obj);
-	void pop_back();
-	void pop_front();
-
-	Iterator insert(const Iterator& itr, const T& obj);
-	Iterator insert(const Iterator& itr, T&& obj);
-	Iterator erase(const Iterator& itr);
-
-	T& front();
-	const T& font() const;
-	T& back();
-	const T& back() const;
-
-	unsigned int size();
-	bool empty();
-
-private:
-	ListElement<T>* crateNewElement();
-
-private:
-	ListElement<T>* m_pHead;
-	ListElement<T>* m_pTail;
-	unsigned int m_uSize;
-};
-
-// ----
 ListElement<T>* List::createNewElement(){
 	ListElement<T>* p = new ListElement<T>();
 	p->next = nullptr;
@@ -274,5 +230,3 @@ bool List::empty(){
 
 
 
-
-#endif

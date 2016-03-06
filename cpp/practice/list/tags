@@ -1,0 +1,130 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+Iterator	list.h	/^	typedef ListElement<T>* Iterator;$/;"	t	class:List	access:public
+List	list.cpp	/^List::List()$/;"	f	class:List	signature:()
+List	list.h	/^	List();$/;"	p	class:List	access:public	signature:()
+List	list.h	/^List::List()$/;"	f	class:List	signature:()
+List	list.h	/^class List {$/;"	c
+List::Iterator	list.h	/^	typedef ListElement<T>* Iterator;$/;"	t	class:List	access:public
+List::List	list.cpp	/^List::List()$/;"	f	class:List	signature:()
+List::List	list.h	/^	List();$/;"	p	class:List	access:public	signature:()
+List::List	list.h	/^List::List()$/;"	f	class:List	signature:()
+List::back	list.cpp	/^T& List::back(){$/;"	f	class:List	signature:()
+List::back	list.cpp	/^const T& List::back() const {$/;"	f	class:List	signature:() const
+List::back	list.h	/^	T& back();$/;"	p	class:List	access:public	signature:()
+List::back	list.h	/^	const T& back() const;$/;"	p	class:List	access:public	signature:() const
+List::back	list.h	/^T& List::back(){$/;"	f	class:List	signature:()
+List::back	list.h	/^const T& List::back() const {$/;"	f	class:List	signature:() const
+List::crateNewElement	list.h	/^	ListElement<T>* crateNewElement();$/;"	p	class:List	access:private	signature:()
+List::createNewElement	list.cpp	/^ListElement<T>* List::createNewElement(){$/;"	f	class:List	signature:()
+List::createNewElement	list.h	/^ListElement<T>* List::createNewElement(){$/;"	f	class:List	signature:()
+List::empty	list.cpp	/^bool List::empty(){$/;"	f	class:List	signature:()
+List::empty	list.h	/^	bool empty();$/;"	p	class:List	access:public	signature:()
+List::empty	list.h	/^bool List::empty(){$/;"	f	class:List	signature:()
+List::erase	list.h	/^	Iterator erase(const Iterator& itr);$/;"	p	class:List	access:public	signature:(const Iterator& itr)
+List::font	list.h	/^	const T& font() const;$/;"	p	class:List	access:public	signature:() const
+List::front	list.cpp	/^T& List::front(){$/;"	f	class:List	signature:()
+List::front	list.cpp	/^const T& List::front() const{$/;"	f	class:List	signature:() const
+List::front	list.h	/^	T& front();$/;"	p	class:List	access:public	signature:()
+List::front	list.h	/^T& List::front(){$/;"	f	class:List	signature:()
+List::front	list.h	/^const T& List::front() const{$/;"	f	class:List	signature:() const
+List::insert	list.cpp	/^Iterator List::insert(const Iterator& itr, T&& obj){$/;"	f	class:List	signature:(const Iterator& itr, T&& obj)
+List::insert	list.cpp	/^Iterator List::insert(const Iterator& itr, const T& obj){$/;"	f	class:List	signature:(const Iterator& itr, const T& obj)
+List::insert	list.h	/^	Iterator insert(const Iterator& itr, T&& obj);$/;"	p	class:List	access:public	signature:(const Iterator& itr, T&& obj)
+List::insert	list.h	/^	Iterator insert(const Iterator& itr, const T& obj);$/;"	p	class:List	access:public	signature:(const Iterator& itr, const T& obj)
+List::insert	list.h	/^Iterator List::insert(const Iterator& itr, T&& obj){$/;"	f	class:List	signature:(const Iterator& itr, T&& obj)
+List::insert	list.h	/^Iterator List::insert(const Iterator& itr, const T& obj){$/;"	f	class:List	signature:(const Iterator& itr, const T& obj)
+List::m_pHead	list.h	/^	ListElement<T>* m_pHead;$/;"	m	class:List	access:private
+List::m_pTail	list.h	/^	ListElement<T>* m_pTail;$/;"	m	class:List	access:private
+List::m_uSize	list.h	/^	unsigned int m_uSize;$/;"	m	class:List	access:private
+List::pop_back	list.cpp	/^void List::pop_back(){$/;"	f	class:List	signature:()
+List::pop_back	list.h	/^	void pop_back();$/;"	p	class:List	access:public	signature:()
+List::pop_back	list.h	/^void List::pop_back(){$/;"	f	class:List	signature:()
+List::pop_front	list.cpp	/^void List::pop_front(){$/;"	f	class:List	signature:()
+List::pop_front	list.h	/^	void pop_front();$/;"	p	class:List	access:public	signature:()
+List::pop_front	list.h	/^void List::pop_front(){$/;"	f	class:List	signature:()
+List::push_back	list.cpp	/^void List::push_back(T&& obj){$/;"	f	class:List	signature:(T&& obj)
+List::push_back	list.cpp	/^void List::push_back(const T& obj){$/;"	f	class:List	signature:(const T& obj)
+List::push_back	list.h	/^	void push_back(T&& obj);$/;"	p	class:List	access:public	signature:(T&& obj)
+List::push_back	list.h	/^	void push_back(const T& obj);$/;"	p	class:List	access:public	signature:(const T& obj)
+List::push_back	list.h	/^void List::push_back(T&& obj){$/;"	f	class:List	signature:(T&& obj)
+List::push_back	list.h	/^void List::push_back(const T& obj){$/;"	f	class:List	signature:(const T& obj)
+List::push_front	list.cpp	/^void List::push_front(T&& obj){$/;"	f	class:List	signature:(T&& obj)
+List::push_front	list.cpp	/^void List::push_front(const T& obj){$/;"	f	class:List	signature:(const T& obj)
+List::push_front	list.h	/^	void push_front(T&& obj);$/;"	p	class:List	access:public	signature:(T&& obj)
+List::push_front	list.h	/^	void push_front(const T& obj);$/;"	p	class:List	access:public	signature:(const T& obj)
+List::push_front	list.h	/^void List::push_front(T&& obj){$/;"	f	class:List	signature:(T&& obj)
+List::push_front	list.h	/^void List::push_front(const T& obj){$/;"	f	class:List	signature:(const T& obj)
+List::removeElement	list.cpp	/^void List::removeElement(ListElement<T>* p){$/;"	f	class:List	signature:(ListElement<T>* p)
+List::removeElement	list.h	/^void List::removeElement(ListElement<T>* p){$/;"	f	class:List	signature:(ListElement<T>* p)
+List::size	list.cpp	/^unsigned int List::size(){$/;"	f	class:List	signature:()
+List::size	list.h	/^	unsigned int size();$/;"	p	class:List	access:public	signature:()
+List::size	list.h	/^unsigned int List::size(){$/;"	f	class:List	signature:()
+List::~List	list.cpp	/^List::~List(){$/;"	f	class:List	signature:()
+List::~List	list.h	/^	~List();$/;"	p	class:List	access:public	signature:()
+List::~List	list.h	/^List::~List(){$/;"	f	class:List	signature:()
+ListElement	list.h	/^struct ListElement{$/;"	s
+ListElement::data	list.h	/^	T data;$/;"	m	struct:ListElement	access:public
+ListElement::next	list.h	/^	ListElement<T>* next;$/;"	m	struct:ListElement	access:public
+_LIST_H_	list.h	2;"	d
+back	list.cpp	/^T& List::back(){$/;"	f	class:List	signature:()
+back	list.cpp	/^const T& List::back() const {$/;"	f	class:List	signature:() const
+back	list.h	/^	T& back();$/;"	p	class:List	access:public	signature:()
+back	list.h	/^	const T& back() const;$/;"	p	class:List	access:public	signature:() const
+back	list.h	/^T& List::back(){$/;"	f	class:List	signature:()
+back	list.h	/^const T& List::back() const {$/;"	f	class:List	signature:() const
+crateNewElement	list.h	/^	ListElement<T>* crateNewElement();$/;"	p	class:List	access:private	signature:()
+createNewElement	list.cpp	/^ListElement<T>* List::createNewElement(){$/;"	f	class:List	signature:()
+createNewElement	list.h	/^ListElement<T>* List::createNewElement(){$/;"	f	class:List	signature:()
+data	list.h	/^	T data;$/;"	m	struct:ListElement	access:public
+empty	list.cpp	/^bool List::empty(){$/;"	f	class:List	signature:()
+empty	list.h	/^	bool empty();$/;"	p	class:List	access:public	signature:()
+empty	list.h	/^bool List::empty(){$/;"	f	class:List	signature:()
+erase	list.h	/^	Iterator erase(const Iterator& itr);$/;"	p	class:List	access:public	signature:(const Iterator& itr)
+font	list.h	/^	const T& font() const;$/;"	p	class:List	access:public	signature:() const
+front	list.cpp	/^T& List::front(){$/;"	f	class:List	signature:()
+front	list.cpp	/^const T& List::front() const{$/;"	f	class:List	signature:() const
+front	list.h	/^	T& front();$/;"	p	class:List	access:public	signature:()
+front	list.h	/^T& List::front(){$/;"	f	class:List	signature:()
+front	list.h	/^const T& List::front() const{$/;"	f	class:List	signature:() const
+insert	list.cpp	/^Iterator List::insert(const Iterator& itr, T&& obj){$/;"	f	class:List	signature:(const Iterator& itr, T&& obj)
+insert	list.cpp	/^Iterator List::insert(const Iterator& itr, const T& obj){$/;"	f	class:List	signature:(const Iterator& itr, const T& obj)
+insert	list.h	/^	Iterator insert(const Iterator& itr, T&& obj);$/;"	p	class:List	access:public	signature:(const Iterator& itr, T&& obj)
+insert	list.h	/^	Iterator insert(const Iterator& itr, const T& obj);$/;"	p	class:List	access:public	signature:(const Iterator& itr, const T& obj)
+insert	list.h	/^Iterator List::insert(const Iterator& itr, T&& obj){$/;"	f	class:List	signature:(const Iterator& itr, T&& obj)
+insert	list.h	/^Iterator List::insert(const Iterator& itr, const T& obj){$/;"	f	class:List	signature:(const Iterator& itr, const T& obj)
+m_pHead	list.h	/^	ListElement<T>* m_pHead;$/;"	m	class:List	access:private
+m_pTail	list.h	/^	ListElement<T>* m_pTail;$/;"	m	class:List	access:private
+m_uSize	list.h	/^	unsigned int m_uSize;$/;"	m	class:List	access:private
+main	main.cpp	/^int main(int argc, char* argv[]){$/;"	f	signature:(int argc, char* argv[])
+next	list.h	/^	ListElement<T>* next;$/;"	m	struct:ListElement	access:public
+pop_back	list.cpp	/^void List::pop_back(){$/;"	f	class:List	signature:()
+pop_back	list.h	/^	void pop_back();$/;"	p	class:List	access:public	signature:()
+pop_back	list.h	/^void List::pop_back(){$/;"	f	class:List	signature:()
+pop_front	list.cpp	/^void List::pop_front(){$/;"	f	class:List	signature:()
+pop_front	list.h	/^	void pop_front();$/;"	p	class:List	access:public	signature:()
+pop_front	list.h	/^void List::pop_front(){$/;"	f	class:List	signature:()
+push_back	list.cpp	/^void List::push_back(T&& obj){$/;"	f	class:List	signature:(T&& obj)
+push_back	list.cpp	/^void List::push_back(const T& obj){$/;"	f	class:List	signature:(const T& obj)
+push_back	list.h	/^	void push_back(T&& obj);$/;"	p	class:List	access:public	signature:(T&& obj)
+push_back	list.h	/^	void push_back(const T& obj);$/;"	p	class:List	access:public	signature:(const T& obj)
+push_back	list.h	/^void List::push_back(T&& obj){$/;"	f	class:List	signature:(T&& obj)
+push_back	list.h	/^void List::push_back(const T& obj){$/;"	f	class:List	signature:(const T& obj)
+push_front	list.cpp	/^void List::push_front(T&& obj){$/;"	f	class:List	signature:(T&& obj)
+push_front	list.cpp	/^void List::push_front(const T& obj){$/;"	f	class:List	signature:(const T& obj)
+push_front	list.h	/^	void push_front(T&& obj);$/;"	p	class:List	access:public	signature:(T&& obj)
+push_front	list.h	/^	void push_front(const T& obj);$/;"	p	class:List	access:public	signature:(const T& obj)
+push_front	list.h	/^void List::push_front(T&& obj){$/;"	f	class:List	signature:(T&& obj)
+push_front	list.h	/^void List::push_front(const T& obj){$/;"	f	class:List	signature:(const T& obj)
+removeElement	list.cpp	/^void List::removeElement(ListElement<T>* p){$/;"	f	class:List	signature:(ListElement<T>* p)
+removeElement	list.h	/^void List::removeElement(ListElement<T>* p){$/;"	f	class:List	signature:(ListElement<T>* p)
+size	list.cpp	/^unsigned int List::size(){$/;"	f	class:List	signature:()
+size	list.h	/^	unsigned int size();$/;"	p	class:List	access:public	signature:()
+size	list.h	/^unsigned int List::size(){$/;"	f	class:List	signature:()
+~List	list.cpp	/^List::~List(){$/;"	f	class:List	signature:()
+~List	list.h	/^	~List();$/;"	p	class:List	access:public	signature:()
+~List	list.h	/^List::~List(){$/;"	f	class:List	signature:()
